@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input oninput="check()" id="show" type="text" />
+    <p id="result"></p>
+  </body>
+</html>
+<script>
+  let search = [
+    "rice",
+    "beans",
+    "yam",
+    "flour",
+    "bread",
+    "banana",
+    "amala",
+    "eba",
+    "akara",
+  ];
+
+  function check() {
+    if (show.value) {
+      result.innerHTML = "";
+      let food = search.filter(function (b) {
+        return b.includes(show.value);
+      });
+      console.log(food);
+
+      food.map((a) => {
+        result.innerHTML += `<p>${a}</p>`;
+      });
+    } else {
+      result.innerHTML = "";
+    }
+  }
+</script>
